@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BP</title>
+</head>
+<body onload="docReady()">
+
+<img id="avatar" src="https://znews-photo.zadn.vn/w660/Uploaded/qhj_yvobvhfwbv/2018_07_18/Nguyen_Huy_Binh1.jpg"width="370" style="position:absolute;left:0; top:0;">
+<script>
+    function nhanPhimTren() {
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.top;
+        element.style.top = parseInt(element.style.top) - 5 + 'px';    }
+    function nhanPhimDuoi() {
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.top;
+        element.style.top = parseInt(element.style.top) + 5 + 'px';    }
+    function nhanPhimTrai() {
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.left;
+        element.style.left = parseInt(element.style.left) - 5 + 'px';    }
+    function nhanPhimPhai() {
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.left;
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function nhanphim(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                nhanPhimTrai();
+                break;
+            case 39:
+                nhanPhimPhai();
+                break;
+            case 38:
+                nhanPhimTren();
+                break;
+            case 40:
+                nhanPhimDuoi();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', nhanphim);
+    }
+</script>
+</body>
+</html>
